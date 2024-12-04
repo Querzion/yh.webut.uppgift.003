@@ -411,6 +411,16 @@
         "build": {
           "build/net6.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Business.dll": {}
+        }
       }
     }
   },
@@ -932,10 +942,16 @@
         "xunit.runner.visualstudio.2.8.2.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "Business/1.0.0": {
+      "type": "project",
+      "path": "../Business/Business.csproj",
+      "msbuildProject": "../Business/Business.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "Business >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.11.1",
       "coverlet.collector >= 6.0.2",
       "xunit >= 2.9.2",
@@ -968,7 +984,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/querzion/Projects/yh.webut.uppgift.003/CSharp_Assignment/Business/Business.csproj": {
+              "projectPath": "/home/querzion/Projects/yh.webut.uppgift.003/CSharp_Assignment/Business/Business.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
