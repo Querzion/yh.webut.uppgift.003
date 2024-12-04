@@ -1,0 +1,96 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {
+      "Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Business.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Business/1.0.0": {
+      "type": "project",
+      "path": "../Business/Business.csproj",
+      "msbuildProject": "../Business/Business.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "Business >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/querzion/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/querzion/Projects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Console/MA_Presentation_Console.csproj",
+      "projectName": "MA_Presentation_Console",
+      "projectPath": "/home/querzion/Projects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Console/MA_Presentation_Console.csproj",
+      "packagesPath": "/home/querzion/.nuget/packages/",
+      "outputPath": "/home/querzion/Projects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Console/obj/",
+      "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
+      "configFilePaths": [
+        "/home/querzion/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "/var/run/host/usr/lib/dotnet/library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {
+            "/home/querzion/Projects/yh.webut.uppgift.003/CSharp_Assignment/Business/Business.csproj": {
+              "projectPath": "/home/querzion/Projects/yh.webut.uppgift.003/CSharp_Assignment/Business/Business.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "all"
+      }
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/var/run/host/usr/lib/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
