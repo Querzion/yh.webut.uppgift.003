@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MA_Presentation_Avalonia_MVVM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d16ac5f1dc307d4120706c652bcafb683741a23d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3158722427fbb1b44a03b012cad6abcdeb51cdcd")]
 [assembly: System.Reflection.AssemblyProductAttribute("MA_Presentation_Avalonia_MVVM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MA_Presentation_Avalonia_MVVM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
