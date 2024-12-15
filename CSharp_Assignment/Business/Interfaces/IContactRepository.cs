@@ -1,6 +1,8 @@
+using Business.Entities;
+
 namespace Business.Interfaces;
 
-public interface IContactRepository
+public interface IContactRepository : IBaseRepository<ContactEntity>
 {
     
 }

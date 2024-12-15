@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Business.Entities;
+using Business.Helpers;
 using Business.Models;
 
 namespace Business.Factories;
@@ -17,6 +18,7 @@ public static class ContactFactory
         {
             return new ContactEntity
             {
+                Id = IdGenerator.Generate_UniqueIdentifier(),
                 FirstName = form.FirstName,
                 LastName = form.LastName,
                 Email = form.Email,

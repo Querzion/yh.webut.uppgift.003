@@ -1,4 +1,6 @@
+using System.Diagnostics;
 using Business.Entities;
+using Business.Factories;
 using Business.Interfaces;
 using Business.Models;
 
@@ -12,11 +14,30 @@ public class ContactService(IContactRepository contactRepository) : IContactServ
 
     public bool CreateContact(ContactRegistrationForm form)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var cEntity = ContactFactory.Create(form);
+
+            if (cEntity != null)
+            {
+                _contacts.Add(cEntity);
+                _contactRepository.SaveToFile(_contacts);
+                
+                return true;
+            }
+            
+            return false;
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine(ex.Message);
+            return false;
+        }
     }
 
     public IEnumerable<Contact> GetContacts()
     {
-        throw new NotImplementedException();
+        _contacts = _contactRepository.GetFromFile()!;
+        return _contacts.Select(contact => ContactFactory.Create(contact))!;
     }
 }

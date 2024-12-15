@@ -5,13 +5,13 @@ namespace Business.Repositories;
 
 public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity>
 {
-    public string Serialize(List<TEntity> list)
+    public virtual string Serialize(List<TEntity> list)
     {
         var json = JsonSerializer.Serialize(list);
         return json;
     }
 
-    public List<TEntity>? Deserialize(string json)
+    public virtual List<TEntity>? Deserialize(string json)
     {
         var jsonObject = JsonSerializer.Deserialize<List<TEntity>>(json);
         return jsonObject;
