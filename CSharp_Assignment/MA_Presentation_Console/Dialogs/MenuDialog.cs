@@ -38,7 +38,7 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
             case "1":
                 Dialogs.MenuHeading("View Contacts");
                 ViewContactsOption();
-                // ReadKey();
+                ReadKey();
                 break;
             case "2":
                 Dialogs.MenuHeading("Create Contact");
