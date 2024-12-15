@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "wt1u0CmGLX0=",
+  "dgSpecHash": "7FPBt4VaqKQ=",
   "success": true,
   "projectFilePath": "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Console/MA_Presentation_Console.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/querzion/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.0/microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "/home/querzion/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.0/microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -40,4 +40,14 @@ public class ContactService(IContactRepository contactRepository) : IContactServ
         _contacts = _contactRepository.GetFromFile()!;
         return _contacts.Select(contact => ContactFactory.Create(contact))!;
     }
+
+    // public bool DeleteContact(string id)
+    // {
+    //     throw new NotImplementedException();
+    // }
+    //
+    // public bool UpdateContact(ContactRegistrationForm form)
+    // {
+    //     throw new NotImplementedException();
+    // }
 }
