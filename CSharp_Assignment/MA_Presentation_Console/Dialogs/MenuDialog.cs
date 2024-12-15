@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Net.Sockets;
 using Business.Entities;
 using Business.Interfaces;
 using Business.Models;
@@ -37,12 +38,12 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
             case "1":
                 Dialogs.MenuHeading("View Contacts");
                 ViewContactsOption();
-                ReadKey();
+                // ReadKey();
                 break;
             case "2":
                 Dialogs.MenuHeading("Create Contact");
                 CreateContactOption();
-                ReadKey();
+                // ReadKey();
                 break;
             case "3":
                 Dialogs.MenuHeading("Update Contact");
@@ -68,38 +69,38 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
 
     private void ViewContactsOption()
     {
-        Dialogs.MenuHeading("Contacts");
-
+        
+        
         try
         {
+            // Get the contacts from the file
             var contacts = _contactService.GetContacts();
+        
+            // Check if the list is null or empty
+            if (contacts == null || contacts.Count() == 0)
+            {
+                WriteLine("No contacts found.");
+                return;
+            }
 
-            if (contacts.Any())
+            // Display the contacts
+            WriteLine("Contacts List:");
+            foreach (var contact in contacts)
             {
-                foreach (var contact in contacts)
-                {
-                    WriteLine(
-                        $"ID: {contact.Id}, Name: {contact.Name}, Full Address: {contact.FullAddress}, Email: <{contact.Email}>, Phone Number: {contact.PhoneNumber} ");
-                }
+                // Display the contact details (adjust the fields as needed)
+                WriteLine($"ID: {contact.Id}");
+                WriteLine($"Name: {contact.FirstName} {contact.LastName}");
+                WriteLine($"Email: {contact.Email}");
+                WriteLine($"Address: {contact.Address}, {contact.PostalCode} {contact.City}");
+                WriteLine($"Phone: {contact.PhoneNumber ?? "N/A"}");
+                WriteLine(new string('-', 50)); // Divider for readability
             }
-            else
-            {
-                WriteLine("There are no contacts.");
-            }
-        }
-        // Multiple catches are from ChatGPT
-        catch (DirectoryNotFoundException ex)
-        {
-            Debug.WriteLine($"Error: {ex.Message}. The contacts file could not be found.");
-            throw;
-        }
-        catch (FileNotFoundException ex)
-        {
-            Debug.WriteLine($"Error: {ex.Message}. The contacts file is missing.");
         }
         catch (Exception ex)
         {
-            Debug.WriteLine($"An unexpected error occured: {ex.Message}.");
+            // Log the error and show a friendly message
+            WriteLine("An error occurred while loading the contacts.");
+            WriteLine($"Error: {ex.Message}");
         }
     }
 
@@ -122,10 +123,12 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
 
         if (result)
         {
+            WriteLine();
             WriteLine($"New Contact successfully created.");
         }
         else
         {
+            WriteLine();
             WriteLine($"New Contact failed to be created. Please try again.");
         }
         

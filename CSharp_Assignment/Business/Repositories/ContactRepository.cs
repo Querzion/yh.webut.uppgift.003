@@ -5,9 +5,14 @@ using Business.Interfaces;
 
 namespace Business.Repositories;
 
-public class ContactRepository(IContactFileService contactFileService) : BaseRepository<ContactEntity>, IContactRepository
+public class ContactRepository : BaseRepository<ContactEntity>, IContactRepository
 {
-    private readonly IContactFileService _contactFileService = contactFileService;
+    private readonly IContactFileService _contactFileService;
+
+    public ContactRepository(IContactFileService contactFileService)
+    {
+        _contactFileService = contactFileService;
+    }
 
     public override bool SaveToFile(List<ContactEntity> list)
     {

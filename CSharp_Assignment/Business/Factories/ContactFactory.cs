@@ -42,9 +42,12 @@ public static class ContactFactory
             return new Contact
             {
                 Id = contactEntity.Id,
-                Name = $"{contactEntity.FirstName} {contactEntity.LastName}",
+                FirstName = contactEntity.FirstName,
+                LastName = contactEntity.LastName,
                 Email = contactEntity.Email,
-                FullAddress = $"{contactEntity.Address}, {contactEntity.PostalCode}, {contactEntity.City}",
+                Address = contactEntity.Address,
+                PostalCode = contactEntity.PostalCode,
+                City = contactEntity.City,
                 PhoneNumber = contactEntity.PhoneNumber
             };
 

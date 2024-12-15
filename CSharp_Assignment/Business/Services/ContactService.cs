@@ -37,7 +37,8 @@ public class ContactService(IContactRepository contactRepository) : IContactServ
 
     public IEnumerable<Contact> GetContacts()
     {
-        _contacts = _contactRepository.GetFromFile()!;
+        // instead of ! ChatGPT told me to do this ( ?? new List<ContactEntity>(); ) 
+        _contacts = _contactRepository.GetFromFile() ?? new List<ContactEntity>();
         return _contacts.Select(contact => ContactFactory.Create(contact))!;
     }
 

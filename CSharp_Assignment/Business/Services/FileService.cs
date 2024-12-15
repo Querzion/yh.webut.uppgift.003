@@ -16,11 +16,11 @@ public abstract class FileService : IFileService
 
     public virtual string GetContentFromFile()
     {
-        if (!File.Exists(_filePath))
+        if (File.Exists(_filePath))
         {
             return File.ReadAllText(_filePath);
         }
-
+        
         return null!;
     }
 

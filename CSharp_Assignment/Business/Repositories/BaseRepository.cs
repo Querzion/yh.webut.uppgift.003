@@ -14,7 +14,7 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity>
     public virtual List<TEntity>? Deserialize(string json)
     {
         var jsonObject = JsonSerializer.Deserialize<List<TEntity>>(json);
-        return jsonObject;
+        return jsonObject ?? new List<TEntity>();
     }
 
     public abstract bool SaveToFile(List<TEntity> list);
