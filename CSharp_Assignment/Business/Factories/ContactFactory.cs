@@ -18,7 +18,7 @@ public static class ContactFactory
         {
             return new ContactEntity
             {
-                Id = IdGenerator.Generate_UniqueIdentifier(),
+                Id = IdGenerator.GenerateUniqueIdentifier(),
                 FirstName = form.FirstName,
                 LastName = form.LastName,
                 Email = form.Email,
