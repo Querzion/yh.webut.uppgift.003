@@ -69,8 +69,6 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
 
     private void ViewContactsOption()
     {
-        
-        
         try
         {
             // Get the contacts from the file
