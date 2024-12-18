@@ -21,12 +21,13 @@ public class ContactRegistrationForm
     public string Address { get; set; } = null!;
     
     [Required (ErrorMessage = "Postal code is required")]
-    [MinLength(5, ErrorMessage = "Postal code must be at least 5 characters")]
+    [RegularExpression(@"^\d{5,}$", ErrorMessage = "Postal code must be a 5 digit string and contain only numbers")]
     public string PostalCode { get; set; } = null!;
     
     [Required (ErrorMessage = "City name is required")]
     [MinLength(2, ErrorMessage = "City name must be at least 2 characters")]
     public string City { get; set; } = null!;
     
+    [RegularExpression(@"^\+?\d+$", ErrorMessage = "Phone number must contain only numbers and may start with a '+' for international format")]
     public string? PhoneNumber { get; set; }
 }
