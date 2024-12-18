@@ -28,6 +28,6 @@ public class ContactRegistrationForm
     [MinLength(2, ErrorMessage = "City name must be at least 2 characters")]
     public string City { get; set; } = null!;
     
-    [RegularExpression(@"^\+?\d+$", ErrorMessage = "Phone number must contain only numbers and may start with a '+' for international format")]
+    [RegularExpression(@"^\+?\d+$", ErrorMessage = "Phone number must contain only numbers and may start with a '+' for international format. No spaces are allowed.")]
     public string? PhoneNumber { get; set; }
 }
