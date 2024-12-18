@@ -5,8 +5,6 @@ namespace Business_Tests.Models;
 
 public class ContactRegistrationForm_Tests
 {
-    
-    
     [Fact]
     public void Create_ShouldReturnContactRegistrationForm()
     {
