@@ -37,6 +37,41 @@
           "build/netstandard2.0/Microsoft.CodeCoverage.targets": {}
         }
       },
+      "Microsoft.Extensions.DependencyInjection/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0"
+        },
+        "compile": {
+          "lib/net9.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
       "Microsoft.NET.Test.Sdk/17.11.1": {
         "type": "package",
         "dependencies": {
@@ -475,6 +510,21 @@
         "runtime": {
           "bin/placeholder/Business.dll": {}
         }
+      },
+      "MA_Presentation_Console/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Business": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "9.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MA_Presentation_Console.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MA_Presentation_Console.dll": {}
+        }
       }
     }
   },
@@ -637,6 +687,66 @@
         "lib/netcoreapp3.1/Microsoft.VisualStudio.CodeCoverage.Shim.dll",
         "microsoft.codecoverage.17.11.1.nupkg.sha512",
         "microsoft.codecoverage.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection/9.0.0": {
+      "sha512": "MCPrg7v3QgNMr0vX4vzRXvkNGgLg8vKWX0nKCWUxu2uPyMsaRgiRc1tHBnbTcfJMhMKj2slE/j2M9oGkd25DNw==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.targets",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
+        "microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.0": {
+      "sha512": "+6f2qv2a3dLwd5w6JanPIPs47CxRbnk+ZocMJUhv9NxP88VlOcJYZs9jY+MYSjxvady08bUZn6qgiNh7DadGgg==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "Microsoft.NET.Test.Sdk/17.11.1": {
@@ -1073,11 +1183,16 @@
       "type": "project",
       "path": "../Business/Business.csproj",
       "msbuildProject": "../Business/Business.csproj"
+    },
+    "MA_Presentation_Console/1.0.0": {
+      "type": "project",
+      "path": "../MA_Presentation_Console/MA_Presentation_Console.csproj",
+      "msbuildProject": "../MA_Presentation_Console/MA_Presentation_Console.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Business >= 1.0.0",
+      "MA_Presentation_Console >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.11.1",
       "Moq >= 4.20.72",
       "coverlet.collector >= 6.0.2",
@@ -1091,11 +1206,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business_Tests/Business_Tests.csproj",
-      "projectName": "Business_Tests",
-      "projectPath": "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business_Tests/Business_Tests.csproj",
+      "projectUniqueName": "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Console_Tests/MA_Presentation_Console_Tests.csproj",
+      "projectName": "MA_Presentation_Console_Tests",
+      "projectPath": "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Console_Tests/MA_Presentation_Console_Tests.csproj",
       "packagesPath": "/home/querzion/.nuget/packages/",
-      "outputPath": "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business_Tests/obj/",
+      "outputPath": "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Console_Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/querzion/.nuget/NuGet/NuGet.Config"
@@ -1111,8 +1226,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business/Business.csproj": {
-              "projectPath": "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business/Business.csproj"
+            "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Console/MA_Presentation_Console.csproj": {
+              "projectPath": "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Console/MA_Presentation_Console.csproj"
             }
           }
         }

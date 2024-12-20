@@ -68,7 +68,7 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
         }
     }
 
-    private void ViewContactsOption()
+    public void ViewContactsOption()
     {
         try
         {
@@ -134,7 +134,7 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
     //     ReadKey();
     // }
     
-    private void CreateContactOption()
+    public void CreateContactOption()
     {
         Dialogs.MenuHeading("New Contact");
 

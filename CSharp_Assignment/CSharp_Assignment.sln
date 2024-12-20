@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business_Tests", "Business_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MA_Presentation_Avalonia", "MA_Presentation_Avalonia\MA_Presentation_Avalonia.csproj", "{78F0B19D-FCCD-4ECB-9DE2-1040DBC7AEA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MA_Presentation_Console_Tests", "MA_Presentation_Console_Tests\MA_Presentation_Console_Tests.csproj", "{B158C3C2-A957-460F-9B0B-675707E65B38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{78F0B19D-FCCD-4ECB-9DE2-1040DBC7AEA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78F0B19D-FCCD-4ECB-9DE2-1040DBC7AEA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78F0B19D-FCCD-4ECB-9DE2-1040DBC7AEA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B158C3C2-A957-460F-9B0B-675707E65B38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B158C3C2-A957-460F-9B0B-675707E65B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B158C3C2-A957-460F-9B0B-675707E65B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B158C3C2-A957-460F-9B0B-675707E65B38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

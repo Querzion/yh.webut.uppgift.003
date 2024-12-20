@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "8KIn6urM108=",
+  "dgSpecHash": "OKZnfV7n2Oo=",
   "success": true,
-  "projectFilePath": "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business_Tests/Business_Tests.csproj",
+  "projectFilePath": "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Console_Tests/MA_Presentation_Console_Tests.csproj",
   "expectedPackageFiles": [
     "/home/querzion/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/querzion/.nuget/packages/coverlet.collector/6.0.2/coverlet.collector.6.0.2.nupkg.sha512",
     "/home/querzion/.nuget/packages/microsoft.codecoverage/17.11.1/microsoft.codecoverage.17.11.1.nupkg.sha512",
+    "/home/querzion/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.0/microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "/home/querzion/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.0/microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
     "/home/querzion/.nuget/packages/microsoft.net.test.sdk/17.11.1/microsoft.net.test.sdk.17.11.1.nupkg.sha512",
     "/home/querzion/.nuget/packages/microsoft.testplatform.objectmodel/17.11.1/microsoft.testplatform.objectmodel.17.11.1.nupkg.sha512",
     "/home/querzion/.nuget/packages/microsoft.testplatform.testhost/17.11.1/microsoft.testplatform.testhost.17.11.1.nupkg.sha512",
