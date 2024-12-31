@@ -2,8 +2,8 @@
 // TESTS TO BE CREATED - [] Not Done | [*] Done
 // - [] Creation of menu/menu attributes,
 // - [*] Creation of form,
-// - [] Creation of ContactEntity,
-// - [] Creation of Contact, 
+// - [*] Creation of ContactEntity,
+// - [*] Creation of Contact, 
 // - [*] Creation of Unique Id,
 // - [] Check Repositories, Base & Contact
 // - [] Creation of Contact.json file, 

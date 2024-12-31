@@ -100,3 +100,8 @@
 /home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business_Tests/obj/Debug/net9.0/Business_Tests.pdb
 /home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business_Tests/obj/Debug/net9.0/Business_Tests.genruntimeconfig.cache
 /home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business_Tests/obj/Debug/net9.0/ref/Business_Tests.dll
+/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business_Tests/bin/Debug/net9.0/Castle.Core.dll
+/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business_Tests/bin/Debug/net9.0/Moq.dll
+/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business_Tests/bin/Debug/net9.0/System.Diagnostics.EventLog.dll
+/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business_Tests/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll
+/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/Business_Tests/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll

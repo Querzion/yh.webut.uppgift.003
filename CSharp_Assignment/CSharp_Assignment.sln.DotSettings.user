@@ -4,5 +4,7 @@
   &lt;Or&gt;
     &lt;ProjectFile&gt;37A5D866-F2EA-4B98-9921-7AADD643B5CC/d:Models/f:ContactRegistrationForm_Tests.cs&lt;/ProjectFile&gt;
     &lt;ProjectFile&gt;37A5D866-F2EA-4B98-9921-7AADD643B5CC/d:Helpers/f:IdGenerator_Tests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;37A5D866-F2EA-4B98-9921-7AADD643B5CC/d:Entities/f:ContactEntity_Tests.cs&lt;/ProjectFile&gt;
+    &lt;ProjectFile&gt;37A5D866-F2EA-4B98-9921-7AADD643B5CC/d:Factories/f:ContactFactory_Tests.cs&lt;/ProjectFile&gt;
   &lt;/Or&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

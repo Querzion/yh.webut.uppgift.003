@@ -1,7 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
-using System.Net.Sockets;
-using Business.Entities;
+using Business.Factories;
 using Business.Interfaces;
 using Business.Models;
 using MA_Presentation_Console.Interfaces;
@@ -28,8 +26,8 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
         Dialogs.MenuHeading("Main Menu");
         WriteLine("1. View Contacts");
         WriteLine("2. Create Contact");
-        WriteLine("3. Update Contact");
-        WriteLine("4. Delete Contact");
+        // WriteLine("3. Update Contact");
+        // WriteLine("4. Delete Contact");
         WriteLine("Q. Exit Application");
         WriteLine("_____________________________________________");
         var option = ReadLine()!;
@@ -46,16 +44,16 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
                 CreateContactOption();
                 // ReadKey();
                 break;
-            case "3":
-                Dialogs.MenuHeading("Update Contact");
-                // UpdateContactOption();
-                ReadKey();
-                break;
-            case "4":
-                Dialogs.MenuHeading("Delete Contact");
-                // DeleteContactOption();
-                ReadKey();
-                break;
+            // case "3":
+            //     Dialogs.MenuHeading("Update Contact");
+            //     UpdateContactOption();
+            //     ReadKey();
+            //     break;
+            // case "4":
+            //     Dialogs.MenuHeading("Delete Contact");
+            //     DeleteContactOption();
+            //     ReadKey();
+            //     break;
             case "q":
                 Dialogs.MenuHeading("Exit Application");
                 WriteLine("Program exit... Press any key to exit...");
@@ -102,45 +100,15 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
             WriteLine($"Error: {ex.Message}");
         }
     }
-
-    // private void CreateContactOption()
-    // {
-    //     Dialogs.MenuHeading("New Contact");
-    //
-    //     var form = new ContactRegistrationForm
-    //     {
-    //         FirstName = Dialogs.Prompt("Enter First Name: "),
-    //         LastName = Dialogs.Prompt("Enter Last Name: "),
-    //         Email = Dialogs.Prompt("Enter Email: "),
-    //         Address = Dialogs.Prompt("Enter Address: "),
-    //         PostalCode = Dialogs.Prompt("Enter PostalCode: "),
-    //         City = Dialogs.Prompt("Enter City: "),
-    //         PhoneNumber = Dialogs.Prompt("Enter PhoneNumber: ")
-    //     };
-    //
-    //     var result = _contactService.CreateContact(form);
-    //
-    //     if (result)
-    //     {
-    //         WriteLine();
-    //         WriteLine($"New Contact successfully created.");
-    //     }
-    //     else
-    //     {
-    //         WriteLine();
-    //         WriteLine($"New Contact failed to be created. Please try again.");
-    //     }
-    //     
-    //     ReadKey();
-    // }
     
     public void CreateContactOption()
     {
         Dialogs.MenuHeading("New Contact");
 
         // Create an instance of the form
-        var form = new ContactRegistrationForm();
-
+        // var form = new ContactRegistrationForm();
+        var form = ContactFactory.Create();
+        
         // Use PromptAndValidate to collect and validate input for each property
         form.FirstName = PromptAndValidate("Enter First Name: ", nameof(ContactRegistrationForm.FirstName), form);
         form.LastName = PromptAndValidate("Enter Last Name: ", nameof(ContactRegistrationForm.LastName), form);
@@ -193,14 +161,4 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
             WriteLine($"{results[0].ErrorMessage}. Please try again.");
         }
     }
-
-    // private void UpdateContactOption()
-    // {
-    //     throw new NotImplementedException();
-    // }
-    //
-    // private void DeleteContactOption()
-    // {
-    //     throw new NotImplementedException();
-    // }
 }
