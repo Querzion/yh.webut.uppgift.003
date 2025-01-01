@@ -13,8 +13,17 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity>
 
     public virtual List<TEntity>? Deserialize(string json)
     {
-        var jsonObject = JsonSerializer.Deserialize<List<TEntity>>(json);
-        return jsonObject ?? new List<TEntity>();
+        // Added a try catch, in order to get the test working.
+        try
+        {
+            var jsonObject = JsonSerializer.Deserialize<List<TEntity>>(json);
+            return jsonObject ?? new List<TEntity>();
+        }
+        catch (JsonException)
+        {
+            // If deserialization fails, return an empty list
+            return new List<TEntity>();
+        }
     }
 
     public abstract bool SaveToFile(List<TEntity> list);

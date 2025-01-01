@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using Business.Entities;
 using Business.Factories;
@@ -43,55 +42,60 @@ public class ContactService(IContactRepository contactRepository) : IContactServ
         return _contacts.Select(contact => ContactFactory.Create(contact))!;
     }
     
-    
     public bool DeleteContact(string id)
     {
+        Debug.WriteLine($"Attempting to delete contact with ID: {id}");
+        Debug.WriteLine($"Current contacts: {string.Join(", ", _contacts.Select(c => c.Id))}");
+        
         var contact = _contacts.FirstOrDefault(c => c.Id == id);
-        if (contact != null)
+        if (contact == null)
         {
-            _contacts.Remove(contact);
-            _contactRepository.SaveToFile(_contacts);
-            Debug.WriteLine($"Contact with ID {id} deleted.");
-            return true;
+            Debug.WriteLine("Contact not found.");
+            return false;
         }
 
-        Debug.WriteLine($"Contact with ID {id} not found.");
-        return false;
+        _contacts.Remove(contact);
+        _contactRepository.SaveToFile(_contacts);
+        Debug.WriteLine($"Contact with ID {id} deleted.");
+        return true;
     }
 
     // My amazingly bad memory skills got some help from ChatGPT with the void to bool convertion. 
-    public bool ClearContacts()
+    public bool ClearAllContacts()
     {
         if (_contacts.Count == 0)
             return false;
 
         _contacts.Clear();
+        _contactRepository.SaveToFile(_contacts);
+        Debug.WriteLine("All contacts have been cleared.");
         return true;
     }
 
-    public bool UpdateContact(ContactEntity cEntity)
+    public bool UpdateContact(ContactEntity entity)
     {
         try
         {
-            var contact = _contacts.FirstOrDefault(c => c.Id == cEntity.Id);
+            // Find the contact to update by its ID
+            var contact = _contacts.FirstOrDefault(c => c.Id == entity.Id);
 
             if (contact == null)
             {
-                Debug.WriteLine($"Contact with ID {cEntity.Id} not found.");
+                Debug.WriteLine($"Contact with ID {entity.Id} not found.");
                 return false;
             }
 
             // Update properties
-            contact.FirstName = cEntity.FirstName;
-            contact.LastName = cEntity.LastName;
-            contact.Email = cEntity.Email;
-            contact.Address = cEntity.Address;
-            contact.PostalCode = cEntity.PostalCode;
-            contact.City = cEntity.City;
-            contact.PhoneNumber = cEntity.PhoneNumber;
+            contact.FirstName = entity.FirstName;
+            contact.LastName = entity.LastName;
+            contact.Email = entity.Email;
+            contact.Address = entity.Address;
+            contact.PostalCode = entity.PostalCode;
+            contact.City = entity.City;
+            contact.PhoneNumber = entity.PhoneNumber;
 
             _contactRepository.SaveToFile(_contacts);
-            Debug.WriteLine($"Contact with ID {cEntity.Id} updated.");
+            Debug.WriteLine($"Contact with ID {entity.Id} updated.");
             return true;
         }
         catch (Exception ex)

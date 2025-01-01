@@ -17,8 +17,9 @@
 
 // Checked with ChatGPT
 // https://chatgpt.com/share/6762a17a-561c-8005-beed-cf5236eeb50c
+// https://chatgpt.com/share/67743c40-0c70-8005-a9fd-6165305079e2
 // Missing tests are: 
-// - [] Validate Input in the form,
+// - [*] Validate Input in the form,
 // - [] Check for edge cases ( duplicate contacts or missing contact data )
 // - [] Test file integrity ( ensure that contact.json/database isn't corrupted )
 // ensues Adding, Updating & Deleting

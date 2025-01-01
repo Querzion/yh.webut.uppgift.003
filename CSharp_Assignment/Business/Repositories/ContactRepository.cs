@@ -33,6 +33,14 @@ public class ContactRepository : BaseRepository<ContactEntity>, IContactReposito
     public override List<ContactEntity>? GetFromFile()
     {
         var json = _contactFileService.GetContentFromFile();
+        
+        // Check if the JSON content is null or empty (Based on one of the ChatGPT tests for the ContactRepository,
+        // it seems I have to send an empto list if the content is null. And now the test is successful)
+        if (string.IsNullOrEmpty(json))
+        {
+            return new List<ContactEntity>();  // Return an empty list if no content is found
+        }
+        
         var list = Deserialize(json);
         return list;
     }
