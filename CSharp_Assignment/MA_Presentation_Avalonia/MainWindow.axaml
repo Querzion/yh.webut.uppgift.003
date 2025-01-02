@@ -2,10 +2,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="MA_Presentation_Avalonia.MainWindow"
-        Title="MA_Presentation_Avalonia">
-    
-        Hello!
         
+        xmlns:viewModels="clr-namespace:MA_Presentation_Avalonia.ViewModels"
+        xmlns:views="clr-namespace:MA_Presentation_Avalonia.Views"
+        d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel}"
+        x:DataType="viewModels:MainViewModel"
+        
+        WindowStartupLocation="CenterScreen"
+        SystemDecorations="None"
+        Background="Transparent"
+        
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
+        x:Class="MA_Presentation_Avalonia.MainWindow"
+        Title="CSharp Assignment" Height="770" Width="400">
+        
+    <Border Background="#FFE4A3" CornerRadius="5">
+        <Grid RowDefinitions="70, *">
+            <Grid x:Name="TopBar" Grid.Row="0" Background="Transparent" PointerPressed="TopBar_OnPointerPressed">
+                <Button Click="ExitButton_OnClick"/>
+            </Grid>
+        </Grid>
+    </Border>
 </Window>

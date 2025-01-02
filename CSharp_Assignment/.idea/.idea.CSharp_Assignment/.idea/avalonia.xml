@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="MA_Presentation_Avalonia/App.axaml" value="MA_Presentation_Avalonia/MA_Presentation_Avalonia.csproj" />
+        <entry key="MA_Presentation_Avalonia/MainWindow.axaml" value="MA_Presentation_Avalonia/MA_Presentation_Avalonia.csproj" />
+        <entry key="MA_Presentation_Avalonia/Views/ContactAddView.axaml" value="MA_Presentation_Avalonia/MA_Presentation_Avalonia.csproj" />
+        <entry key="MA_Presentation_Avalonia/Views/ContactDeleteView.axaml" value="MA_Presentation_Avalonia/MA_Presentation_Avalonia.csproj" />
+        <entry key="MA_Presentation_Avalonia/Views/ContactDetailsView.axaml" value="MA_Presentation_Avalonia/MA_Presentation_Avalonia.csproj" />
+        <entry key="MA_Presentation_Avalonia/Views/ContactEditView.axaml" value="MA_Presentation_Avalonia/MA_Presentation_Avalonia.csproj" />
+        <entry key="MA_Presentation_Avalonia/Views/ContactListView.axaml" value="MA_Presentation_Avalonia/MA_Presentation_Avalonia.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

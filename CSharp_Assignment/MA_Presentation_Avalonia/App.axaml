@@ -6,5 +6,13 @@
 
     <Application.Styles>
         <FluentTheme />
+        <StyleInclude Source="avares://MA_Presentation_Avalonia/Resources/Styles/Buttons.axaml" />
+        <StyleInclude Source="avares://MA_Presentation_Avalonia/Resources/Styles/Typography.axaml" />
     </Application.Styles>
+    
+             <!-- The reason I got my fonts working eventually: https://www.youtube.com/watch?v=hAyeGWozi90 -->
+    <Application.Resources>
+        <FontFamily x:Key="AgaveNerdFont-Regular">/Resources/Fonts/AgaveNerdFont-Regular.ttf#Agave Nerd Font Regular</FontFamily>
+        <FontFamily x:Key="AgaveNerdFont-Bold">/Resources/Fonts/AgaveNerdFont-Bold.ttf#Agave Nerd Font Bold</FontFamily>
+    </Application.Resources>
 </Application>

@@ -63,7 +63,7 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
                 break;
             case "q":
                 Dialogs.MenuHeading("Exit Application");
-                WriteLine("Program exit... Press any key to exit...");
+                WriteLine("Application closing... Press any key to exit...");
                 ReadKey();
                 isRunning = false;
                 break;
@@ -252,7 +252,7 @@ public class MenuDialog(IContactService contactService) : IMenuDialog
             contactEntity.PhoneNumber = PromptAndValidate("Enter Phone Number", "PhoneNumber", updatedForm);
 
             // Use the service to update the contact
-            bool updated = _contactService.UpdateContact(contactEntity); // Call update method
+            bool updated = _contactService.UpdateContactEntity(contactEntity); // Call update method
 
             if (updated)
             {

@@ -178,7 +178,7 @@ public class ContactService_Tests
         var contactService = new ContactService(mockRepository.Object);
 
         // Act: Call UpdateContact with the updated contact
-        var result = contactService.UpdateContact(updatedContact);
+        var result = contactService.UpdateContactEntity(updatedContact);
 
         // Assert: Ensure the contact was updated and saved
         Assert.True(result); // The update should succeed
@@ -210,7 +210,7 @@ public class ContactService_Tests
         var contactService = new ContactService(mockRepository.Object);
 
         // Act: Try to update a non-existing contact
-        var result = contactService.UpdateContact(nonExistentContact);
+        var result = contactService.UpdateContactEntity(nonExistentContact);
 
         // Assert: Ensure the update fails
         Assert.False(result); // The update should fail
@@ -248,7 +248,7 @@ public class ContactService_Tests
 
         _mockRepository.Setup(r => r.GetFromFile()).Returns(contactList);
         _mockRepository.Setup(r => r.SaveToFile(It.IsAny<List<ContactEntity>>())).Verifiable();
-
+        
         // Act
         var result = _contactService.ClearAllContacts();
 
@@ -297,6 +297,7 @@ public class ContactService_Tests
         var result = contactService.ClearAllContacts();
 
         // Assert: Ensure the method returns false and no save action is performed
+        Assert.Empty(contactService.GetContacts()); // Verify in-memory list is cleared
         Assert.False(result); // Method should return false
         mockRepository.Verify(r => r.SaveToFile(It.IsAny<List<ContactEntity>>()), Times.Never); // Verify save action is not called
     }

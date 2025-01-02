@@ -6,27 +6,44 @@
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+        <Authors>Slisk Lindqvist</Authors>
+        <PublisherName>Trash</PublisherName>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.2.1"/>
-        <PackageReference Include="Avalonia.Desktop" Version="11.2.1"/>
-        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1"/>
-        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.1"/>
+        <PackageReference Include="Avalonia" Version="11.2.3" />
+        <PackageReference Include="Avalonia.Desktop" Version="11.2.3" />
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.3" />
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.3" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Include="Avalonia.Diagnostics" Version="11.2.1">
+        <PackageReference Include="Avalonia.Diagnostics" Version="11.2.3">
             <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
             <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
         </PackageReference>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Business\Business.csproj" />
+      <ProjectReference Include="..\MA_Presentation_Avalonia_Tests\MA_Presentation_Avalonia_Tests.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Models\" />
-      <Folder Include="ViewModels\" />
-      <Folder Include="Views\" />
+      <Folder Include="Resources\Images\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\Fonts\AgaveNerdFont-Bold.ttf" />
+      <AvaloniaResource Include="Resources\Fonts\AgaveNerdFont-Bold.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="Resources\Fonts\AgaveNerdFont-Regular.ttf" />
+      <AvaloniaResource Include="Resources\Fonts\AgaveNerdFont-Regular.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
     </ItemGroup>
 </Project>

@@ -86,7 +86,7 @@ public static class TestData
         {
             samples.Add(new ContactEntity
             {
-                Id = Guid.NewGuid().ToString(),
+                // Id = Guid.NewGuid().ToString(),
                 FirstName = $"Slisk{i}",
                 LastName = "Lindqvist",
                 Email = $"slisk.lindqvist{i}@querzion.com",
