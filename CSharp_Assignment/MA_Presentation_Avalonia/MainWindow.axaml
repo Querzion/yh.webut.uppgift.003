@@ -3,10 +3,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         
-        xmlns:viewModels="clr-namespace:MA_Presentation_Avalonia.ViewModels"
+        xmlns:viewmodels="clr-namespace:MA_Presentation_Avalonia.ViewModels"
         xmlns:views="clr-namespace:MA_Presentation_Avalonia.Views"
-        d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel}"
-        x:DataType="viewModels:MainViewModel"
+        d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
+        x:DataType="viewmodels:MainViewModel"
         
         WindowStartupLocation="CenterScreen"
         SystemDecorations="None"
@@ -19,8 +19,30 @@
     <Border Background="#FFE4A3" CornerRadius="5">
         <Grid RowDefinitions="70, *">
             <Grid x:Name="TopBar" Grid.Row="0" Background="Transparent" PointerPressed="TopBar_OnPointerPressed">
-                <Button Click="ExitButton_OnClick"/>
+                <Button Click="ExitButton_OnClick" Classes="ExitButton" />
             </Grid>
+            
+            <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}" Margin="10 0 10 10" Background="White" Foreground="Black">
+                <ContentControl.DataTemplates>
+                    
+                    <DataTemplate DataType="{x:Type viewmodels:ContactListViewModel}">
+                        <views:ContactListView />
+                    </DataTemplate>
+                    
+                    <DataTemplate DataType="{x:Type views:ContactAddView}">
+                        <views:ContactAddView />
+                    </DataTemplate>
+                    
+                    <DataTemplate DataType="{x:Type viewmodels:ContactDetailsViewModel}">
+                        <views:ContactDetailsView />
+                    </DataTemplate>
+                    
+                    <DataTemplate DataType="{x:Type viewmodels:ContactEditViewModel}">
+                        <views:ContactEditView />
+                    </DataTemplate>
+                    
+                </ContentControl.DataTemplates>
+            </ContentControl>
         </Grid>
     </Border>
 </Window>
