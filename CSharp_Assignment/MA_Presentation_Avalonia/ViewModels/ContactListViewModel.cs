@@ -1,7 +1,6 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Business.Entities;
 using Business.Interfaces;
 using Business.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -16,7 +15,10 @@ public partial class ContactListViewModel : ObservableObject
     private readonly IServiceProvider _serviceProvider;
 
     [ObservableProperty]
-    private ObservableCollection<Contact> _contacts = new();
+    private string headline = "CONTACT LIST";
+    
+    [ObservableProperty]
+    private ObservableCollection<Contact> _contacts = [];
     
     public ContactListViewModel(IContactService contactService, IServiceProvider serviceProvider)
     {

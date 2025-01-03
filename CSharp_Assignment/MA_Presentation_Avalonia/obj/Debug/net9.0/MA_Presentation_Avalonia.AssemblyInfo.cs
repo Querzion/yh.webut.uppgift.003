@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Slisk Lindqvist")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fb32d0c7ae9c701a2b1852acf1510554de93fa3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9adfcacf7a24815963479fe06c2c2366e5ebb93")]
 [assembly: System.Reflection.AssemblyProductAttribute("MA_Presentation_Avalonia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MA_Presentation_Avalonia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

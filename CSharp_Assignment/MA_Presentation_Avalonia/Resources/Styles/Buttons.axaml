@@ -16,7 +16,7 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Foreground" Value="#000000" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
         <Setter Property="Margin" Value="20 0 20 0"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -46,12 +46,52 @@
         <Setter Property="Foreground" Value="#FF725A" />
     </Style>
     
+    <!-- Add Button Class Styling -->
+    <Style Selector="Button.AddButton">
+        <Setter Property="Content" Value="Add Contact &#x2795;" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+        <Setter Property="Margin" Value="20 0 20 0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="ButtonBorder">
+                        <TextBlock x:Name="ContentText"
+                                   Text="{TemplateBinding Content}"
+                                   FontWeight="{TemplateBinding FontWeight}"
+                                   FontSize="{TemplateBinding FontSize}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                        />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- Pseudo-class for hover effect -->
+    <Style Selector="Button.AddButton:pointerover /template/ TextBlock#ContentText">
+        <Setter Property="Foreground" Value="#505050" />
+    </Style>
+    
+    <!-- Pseudo-class for pressed effect -->
+    <Style Selector="Button.AddButton:pressed /template/ TextBlock#ContentText">
+        <Setter Property="Foreground" Value="#599874" />
+    </Style>
+    
     <!-- Standard Button -->
     <Style Selector="Button.StandardButton">
         <Setter Property="Padding" Value="15" />
         <Setter Property="FontSize" Value="16" />
-        <Setter Property="Background" Value="#000000" />
-        <Setter Property="Foreground" Value="#599874" />
+        <Setter Property="Background" Value="{DynamicResource ForegroundColor}" />
+        <Setter Property="Foreground" Value="{DynamicResource BackgroundColor}" />
         <Setter Property="FontWeight" Value="Medium" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -79,7 +119,7 @@
                                 />
                             </StackPanel>
                             
-                            <TextBlock Grid.Column="2" Foreground="#404040" 
+                            <TextBlock Grid.Column="2" Foreground="{DynamicResource BackgroundColor}" 
                                        FontFamily="{DynamicResource OpenDyslexicNerdFont-Bold}" 
                                        Text="" FontSize="22" />
                         </Grid>
@@ -90,13 +130,12 @@
         </Setter>
     </Style>
     
-    <!-- Avalonia Version -->
     <!-- Hover (Pointer Over) Effect -->
     <Style Selector="Button.StandardButton:pointerover /template/ Border#ButtonBorder">
-        <Setter Property="Background" Value="DarkRed" />
+        <Setter Property="Background" Value="#599874" />
     </Style>
     <Style Selector="Button.StandardButton:pointerover /template/ TextBlock#ContentText">
-        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Foreground" Value="#000000" />
     </Style>
 
     <!-- Pressed Effect -->
@@ -109,27 +148,37 @@
     
     <!-- Cancel Button -->
     <Style Selector="Button.CancelButton">
+        <Setter Property="Padding" Value="15" />
         <Setter Property="FontSize" Value="16" />
-        <Setter Property="Background" Value="#FF725A" />
-        <Setter Property="Foreground" Value="#000000" />
+        <Setter Property="Background" Value="{DynamicResource ForegroundColor}" />
+        <Setter Property="Foreground" Value="{DynamicResource BackgroundColor}" />
         <Setter Property="FontWeight" Value="Medium" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="CornerRadius" Value="5" />
-        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="ButtonBorder">
-                        <TextBlock x:Name="ContentText" 
-                                   Text="{TemplateBinding Content}"
-                                   FontSize="{TemplateBinding FontSize}"
-                                   FontWeight="{TemplateBinding FontWeight}"
-                                   FontFamily="{TemplateBinding FontFamily}"
-                                   Foreground="{TemplateBinding Foreground}"
-                                   Background="{TemplateBinding Background}"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"/>
+                    <Border x:Name="ButtonBorder"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="5">
+                        
+                        <Grid ColumnDefinitions="20, *, 20">
+                            
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <!-- <TextBlock Text="&#xf300;" FontFamily="{DynamicResource FontAwesome-Regular}" FontSize="24" /> -->
+                                <TextBlock x:Name="ContentText"
+                                           Text="{TemplateBinding Content}"
+                                           FontSize="{TemplateBinding FontSize}"
+                                           FontWeight="{TemplateBinding FontWeight}"
+                                           FontFamily="{TemplateBinding FontFamily}"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                />
+                            </StackPanel>
+                        </Grid>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -137,12 +186,53 @@
     </Style>
     
     <!-- Hover (Pointer Over) Effect -->
+    <Style Selector="Button.CancelButton:pointerover /template/ Border#ButtonBorder">
+        <Setter Property="Background" Value="#FF725A" />
+    </Style>
     <Style Selector="Button.CancelButton:pointerover /template/ TextBlock#ContentText">
-        <Setter Property="Foreground" Value="PaleVioletRed" />
+        <Setter Property="Foreground" Value="#000000" />
     </Style>
 
     <!-- Pressed Effect -->
+    <Style Selector="Button.CancelButton:pressed /template/ Border#ButtonBorder">
+        <Setter Property="Background" Value="#9FABBD" />
+    </Style>
     <Style Selector="Button.CancelButton:pressed /template/ TextBlock#ContentText">
-        <Setter Property="Foreground" Value="#9FABBD" />
+        <Setter Property="Foreground" Value="DarkRed" />
+    </Style>
+    
+    <!-- ToggleButton Base Style -->
+    <Style Selector="ToggleButton">
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Background" Value="#FFE4A3"/>
+        <Setter Property="BorderBrush" Value="#000000" />
+        <Setter Property="BorderThickness" Value="3"/>
+    </Style>
+
+    <!-- Checked State -->
+    <Style Selector="ToggleButton:checked">
+        <Setter Property="Background" Value="#404040"/>
+        <Setter Property="BorderBrush" Value="#000000"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+
+    <!-- Checked State -->
+    <Style Selector="ToggleButton:unchecked">
+        <Setter Property="Background" Value="#404040"/>
+        <Setter Property="BorderBrush" Value="#FFE4A3"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+    </Style>
+    
+    <!-- Container Style -->
+    <Style Selector="Border.VerticalToggleContainer">
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="60"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="CornerRadius" Value="5"/>
     </Style>
 </Styles>
+

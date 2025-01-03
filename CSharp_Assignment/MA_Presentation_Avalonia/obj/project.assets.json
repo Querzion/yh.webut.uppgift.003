@@ -3915,6 +3915,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Avalonia >= 11.2.3",
+      "Avalonia.Controls.DataGrid >= 11.2.3",
       "Avalonia.Desktop >= 11.2.3",
       "Avalonia.Diagnostics >= 11.2.3",
       "Avalonia.Fonts.Inter >= 11.2.3",
@@ -3923,7 +3924,6 @@
       "CommunityToolkit.Mvvm >= 8.4.0",
       "MA_Presentation_Avalonia_Tests >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection >= 9.0.0",
-      "Microsoft.Extensions.DependencyInjection.Abstractions >= 9.0.0",
       "Microsoft.Extensions.Hosting >= 9.0.0",
       "Microsoft.Extensions.Hosting.Abstractions >= 9.0.0"
     ]
@@ -3983,6 +3983,10 @@
             "target": "Package",
             "version": "[11.2.3, )"
           },
+          "Avalonia.Controls.DataGrid": {
+            "target": "Package",
+            "version": "[11.2.3, )"
+          },
           "Avalonia.Desktop": {
             "target": "Package",
             "version": "[11.2.3, )"
@@ -4004,10 +4008,6 @@
             "version": "[8.4.0, )"
           },
           "Microsoft.Extensions.DependencyInjection": {
-            "target": "Package",
-            "version": "[9.0.0, )"
-          },
-          "Microsoft.Extensions.DependencyInjection.Abstractions": {
             "target": "Package",
             "version": "[9.0.0, )"
           },

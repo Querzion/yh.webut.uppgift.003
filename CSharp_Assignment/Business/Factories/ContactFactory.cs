@@ -5,7 +5,7 @@ using Business.Models;
 
 namespace Business.Factories;
 
-public static class ContactFactory
+public class ContactFactory
 {
     public static ContactRegistrationForm Create()
     {

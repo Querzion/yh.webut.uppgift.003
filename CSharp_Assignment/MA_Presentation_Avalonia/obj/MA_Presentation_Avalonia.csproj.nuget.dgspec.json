@@ -116,6 +116,10 @@
               "target": "Package",
               "version": "[11.2.3, )"
             },
+            "Avalonia.Controls.DataGrid": {
+              "target": "Package",
+              "version": "[11.2.3, )"
+            },
             "Avalonia.Desktop": {
               "target": "Package",
               "version": "[11.2.3, )"
@@ -137,10 +141,6 @@
               "version": "[8.4.0, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[9.0.0, )"
             },

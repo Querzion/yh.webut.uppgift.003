@@ -6,7 +6,7 @@ using MA_Presentation_Console.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 var serviceProvider = new ServiceCollection()
-    .AddSingleton<IContactFileService>(new ContactFileService("Data", "Contacts.json"))
+    .AddSingleton<IContactFileService>(new ContactFileService("../../../../Data", "Contacts.json"))
     .AddSingleton<IContactRepository, ContactRepository>()
     .AddSingleton<IContactService, ContactService>()
     .AddTransient<IMenuDialog, MenuDialog>()

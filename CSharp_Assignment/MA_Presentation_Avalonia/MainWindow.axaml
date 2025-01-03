@@ -12,35 +12,51 @@
         SystemDecorations="None"
         Background="Transparent"
         
-        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="870" d:DesignHeight="450"
         x:Class="MA_Presentation_Avalonia.MainWindow"
-        Title="CSharp Assignment" Height="770" Width="400">
-        
-    <Border Background="#FFE4A3" CornerRadius="5">
+        Title="CSharp Assignment" Height="870" Width="450">
+    
+    <!-- Changed background from static #FFE4A3 to DynamicResource -->
+    <Border Background="{DynamicResource BackgroundColor}" CornerRadius="5">
         <Grid RowDefinitions="70, *">
             <Grid x:Name="TopBar" Grid.Row="0" Background="Transparent" PointerPressed="TopBar_OnPointerPressed">
+                
+                <!-- Container for the toggle switch -->
+                <Border Name="VerticalToggleContainer" Classes="VerticalToggleContainer" 
+                        HorizontalAlignment="Left" VerticalAlignment="Center"
+                        Margin="15 15 0 0">
+                    <!-- Toggle button -->
+                    <!-- <ToggleButton Name="VerticalToggle" IsChecked="True"/> -->
+                    <!-- Checked/Unchecked is old, and I'm supposed to use IsCheckedChanged, 
+                    but I got the shift kind of working, So I don't really want to change it anymore then I have too. -->
+                    <ToggleButton Name="ThemeToggle"
+                                  Checked="ThemeToggle_Checked"
+                                  Unchecked="ThemeToggle_Unchecked" />
+                </Border>
+                
                 <Button Click="ExitButton_OnClick" Classes="ExitButton" />
             </Grid>
-            
-            <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}" Margin="10 0 10 10" Background="White" Foreground="Black">
+    
+            <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}" 
+                            Background="{DynamicResource BackgroundColor}" Foreground="{DynamicResource ForegroundColor}">
                 <ContentControl.DataTemplates>
-                    
+    
                     <DataTemplate DataType="{x:Type vm:ContactListViewModel}">
                         <views:ContactListView />
                     </DataTemplate>
-                    
+    
                     <DataTemplate DataType="{x:Type vm:ContactAddViewModel}">
                         <views:ContactAddView />
                     </DataTemplate>
-                    
+    
                     <DataTemplate DataType="{x:Type vm:ContactDetailsViewModel}">
                         <views:ContactDetailsView />
                     </DataTemplate>
-                    
+    
                     <DataTemplate DataType="{x:Type vm:ContactEditViewModel}">
                         <views:ContactEditView />
                     </DataTemplate>
-                    
+    
                 </ContentControl.DataTemplates>
             </ContentControl>
         </Grid>
