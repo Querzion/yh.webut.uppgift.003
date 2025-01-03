@@ -78,12 +78,12 @@
     
     <!-- Pseudo-class for hover effect -->
     <Style Selector="Button.AddButton:pointerover /template/ TextBlock#ContentText">
-        <Setter Property="Foreground" Value="#505050" />
+        <Setter Property="Foreground" Value="#599874" />
     </Style>
     
     <!-- Pseudo-class for pressed effect -->
     <Style Selector="Button.AddButton:pressed /template/ TextBlock#ContentText">
-        <Setter Property="Foreground" Value="#599874" />
+        <Setter Property="Foreground" Value="#505050" />
     </Style>
     
     <!-- Standard Button -->

@@ -33,12 +33,13 @@
                             <!-- <TextBlock Text="{Binding FullAddress}" /> -->
                             <!-- <TextBlock Text="{Binding FullContact}" FontSize="12" /> -->
                             <TextBlock Text="{Binding FullName}" FontSize="20" FontWeight="Bold" />
-                            <TextBlock Text="{Binding Email}" FontSize="14" />
+                            <TextBlock Text="{Binding Email}" FontSize="14" FontFamily=""/>
                         </StackPanel>
                         
                         <StackPanel Grid.Column="1">
-                            <!-- <Button Command="{Binding DataContext.GoToContactDetailsViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" -->
-                            <!--         CommandParameter="{Binding .}" Content="&#x2026;" Padding="8 5" /> -->
+                            <Button Command="{Binding DataContext.GoToContactDetailsViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                                    CommandParameter="{Binding .}" 
+                                    Content="&#x2026;" Padding="8 5" />
                         </StackPanel>
                         
                     </Grid>

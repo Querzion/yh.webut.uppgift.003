@@ -184,3 +184,6 @@
 /home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Avalonia/obj/Debug/net9.0/MA_Prese.A7CF7660.Up2Date
 /home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Avalonia/obj/Debug/net9.0/MA_Presentation_Avalonia.genruntimeconfig.cache
 /home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Avalonia/obj/Debug/net9.0/ref/MA_Presentation_Avalonia.dll
+/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Avalonia/obj/Debug/net9.0/MA_Presentation_Avalonia.dll
+/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Avalonia/obj/Debug/net9.0/refint/MA_Presentation_Avalonia.dll
+/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Avalonia/obj/Debug/net9.0/MA_Presentation_Avalonia.pdb
