@@ -48,7 +48,10 @@ public static class ContactFactory
                 Address = contactEntity.Address,
                 PostalCode = contactEntity.PostalCode,
                 City = contactEntity.City,
-                PhoneNumber = contactEntity.PhoneNumber
+                PhoneNumber = contactEntity.PhoneNumber,
+                FullName = $"{contactEntity.FirstName} {contactEntity.LastName}",
+                FullAddress = $"{contactEntity.Address} {contactEntity.PostalCode} {contactEntity.City}",
+                FullContact = $"{contactEntity.Email} {contactEntity.PhoneNumber}",
             };
 
         }

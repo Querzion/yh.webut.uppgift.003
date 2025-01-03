@@ -12,4 +12,8 @@ public class Contact
     public string PostalCode { get; set; } = null!;
     public string City { get; set; } = null!;
     public string? PhoneNumber { get; set; }
+    
+    public string FullName { get; set; } = null!;
+    public string FullAddress { get; set; } = null!;
+    public string FullContact { get; set; } = null!;
 }

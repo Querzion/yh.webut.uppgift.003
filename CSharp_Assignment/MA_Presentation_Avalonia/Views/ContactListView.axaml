@@ -2,7 +2,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             
+             xmlns:vm="clr-namespace:MA_Presentation_Avalonia.ViewModels"
+             xmlns:models="clr-namespace:Business.Models;assembly=Business"
+             d:DataContext="{d:DesignInstance Type=vm:ContactListViewModel}"
+             x:DataType="vm:ContactListViewModel"
+             
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="MA_Presentation_Avalonia.Views.ContactListView">
-    Welcome to Avalonia!
+    <Grid Margin="15" RowDefinitions="Auto, *">
+        <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+            <TextBlock Grid.Column="0" Text="Contact List" FontSize="20" FontWeight="Bold" />
+            <Button Grid.Column="1" Command="{Binding GoToContactAddViewCommand}" 
+                    Content="&#x2795;" Padding="10 5" /> 
+        </Grid>
+        
+        <ListBox Grid.Row="1" ItemsSource="{Binding Contacts}"
+                     Margin="0 20 0 0 " HorizontalAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="models:Contact">
+                    <Grid ColumnDefinitions="*, Auto">
+                        
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="{Binding FullName}" />
+                            <TextBlock Text="{Binding FullAddress}" />
+                            <TextBlock Text="{Binding FullContact}" FontSize="12" />
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Column="1">
+                            <Button Command="{Binding DataContext.GoToContactDetailsViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    CommandParameter="{Binding .}" Content="&#x2026;" Padding="8 5" />
+                        </StackPanel>
+                        
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+    
+    
 </UserControl>
