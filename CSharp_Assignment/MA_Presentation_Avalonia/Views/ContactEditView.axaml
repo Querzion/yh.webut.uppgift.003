@@ -7,45 +7,45 @@
              d:DataContext="{d:DesignInstance Type=vm:ContactEditViewModel}"
              x:DataType="vm:ContactEditViewModel"
              
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="850"
              x:Class="MA_Presentation_Avalonia.Views.ContactEditView">
     
     <Grid Margin="15" RowDefinitions="Auto, *, Auto">
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Contact Details" FontSize="20" FontWeight="Bold" />
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Headline, FallbackValue=EDIT CONTACT}" FontSize="20" FontWeight="Bold" />
         
         <StackPanel Grid.Row="1" Margin="0 20 0 0 ">
-            <TextBlock Text="First Name"/>
+            <TextBlock Text="First Name" Classes="LabelText" />
             <TextBox Text="{Binding Contact.FirstName}" 
-                     Margin="0,0,0,10" Padding="4" />
+                     Margin="0,0,0,10" Padding="4" Classes="InputText" />
             
-            <TextBlock Text="Last Name"/>
+            <TextBlock Text="Last Name" Classes="LabelText" />
             <TextBox Text="{Binding Contact.LastName}" 
-                     Margin="0,0,0,10" Padding="4" />
+                     Margin="0,0,0,10" Padding="4" Classes="InputText" />
             
-            <TextBlock Text="Address"/>
+            <TextBlock Text="Address" Classes="LabelText" />
             <TextBox Text="{Binding Contact.Address}" 
-                     Margin="0,0,0,10" Padding="4" />
+                     Margin="0,0,0,10" Padding="4" Classes="InputText" />
             
-            <TextBlock Text="Postal Code"/>
+            <TextBlock Text="Postal Code" Classes="LabelText" />
             <TextBox Text="{Binding Contact.PostalCode}" 
-                     Margin="0,0,0,10" Padding="4" />
+                     Margin="0,0,0,10" Padding="4" Classes="InputText" />
             
-            <TextBlock Text="City"/>
+            <TextBlock Text="City" Classes="LabelText" />
             <TextBox Text="{Binding Contact.City}" 
-                     Margin="0,0,0,10" Padding="4" />
+                     Margin="0,0,0,10" Padding="4" Classes="InputText" />
             
-            <TextBlock Text="Email"/>
+            <TextBlock Text="Email" Classes="LabelText" />
             <TextBox Text="{Binding Contact.Email}" 
-                     Margin="0,0,0,10" Padding="4" />
+                     Margin="0,0,0,10" Padding="4" Classes="InputText" />
             
-            <TextBlock Text="Phone Number"/>
+            <TextBlock Text="Phone Number" Classes="LabelText" />
             <TextBox Text="{Binding Contact.PhoneNumber}" 
-                     Margin="0,0,0,10" Padding="4" />
+                     Margin="0,0,0,10" Padding="4" Classes="InputText" />
         </StackPanel>
         
         <StackPanel Grid.Row="2">
             <Button Command="{Binding UpdateContactCommand}" 
-                    Content="Edit" Margin="0 10 0 5" Padding="5" 
+                    Content="Update Contact" Margin="0 10 0 5" Padding="5" 
                     HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
                     Classes="StandardButton" />
             <Button Command="{Binding BackOrCancelCommand}" 

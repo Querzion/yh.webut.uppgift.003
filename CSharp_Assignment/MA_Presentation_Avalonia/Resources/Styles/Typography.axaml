@@ -32,8 +32,18 @@
     <Style Selector="TextBlock.LabelText">
         <Setter Property="Margin" Value="3 5" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-        <Setter Property="FontSize" Value="15" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="16" />
         <Setter Property="FontWeight" Value="Medium" />
+    </Style>
+    
+    <!-- Label Details Text -->
+    <Style Selector="TextBlock.LabelDetailsText">
+        <Setter Property="Margin" Value="3 5" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Bold" />
     </Style>
     
     <!-- Warning Text -->
@@ -50,13 +60,13 @@
     <!-- Input Text -->
     <Style Selector="TextBox.InputText">
         <Setter Property="Margin" Value="0 0 0 15" />
-        <!-- <Setter Property="Background" Value="{DynamicResource ForegroundColor}" /> -->
-        <Setter Property="Foreground" Value="{DynamicResource BackgroundColor}" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="FontSize" Value="15" />
-        <Setter Property="Padding" Value="25" />
-        <!-- <Setter Property="BorderBrush" Value="{DynamicResource ForegroundColor}" /> -->
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+        <Setter Property="Background" Value="{DynamicResource BackgroundColor}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ForegroundColor}" />
         <Setter Property="BorderThickness" Value="3" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Padding" Value="25" />
     </Style>
     
     <!-- Input Area Text -->
@@ -64,10 +74,4 @@
         <Setter Property="Height" Value="300" />
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
-    
-    <!-- <Style Selector="Label.required"> -->
-    <!--     <Setter Property="BorderBrush" Value="Firebrick"/> -->
-    <!--     <Setter Property="Foreground" Value="Firebrick"/> -->
-    <!--     <Setter Property="BorderThickness" Value="2"/> -->
-    <!-- </Style> -->
 </Styles>

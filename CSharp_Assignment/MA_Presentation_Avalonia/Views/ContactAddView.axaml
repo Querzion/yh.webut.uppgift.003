@@ -7,7 +7,7 @@
              d:DataContext="{d:DesignInstance Type=vm:ContactAddViewModel}"
              x:DataType="vm:ContactAddViewModel"
              
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="850"
              x:Class="MA_Presentation_Avalonia.Views.ContactAddView">
     
     <Grid Margin="15" RowDefinitions="Auto, *, Auto">

@@ -18,6 +18,7 @@ public partial class ContactListViewModel : ObservableObject
     #region Private Members
 
     private readonly IServiceProvider _serviceProvider;
+    private readonly IContactService _contactService;
         
     #endregion
 
@@ -42,10 +43,10 @@ public partial class ContactListViewModel : ObservableObject
     public ContactListViewModel(IContactService contactService, IServiceProvider serviceProvider)
     // public ContactListViewModel()
     {
-        var contactService1 = contactService;
+        _contactService = contactService;
         _serviceProvider = serviceProvider;
         
-        _contacts = new ObservableCollection<Contact>(contactService1.GetContacts() ?? Enumerable.Empty<Contact>());
+        _contacts = new ObservableCollection<Contact>(_contactService.GetContacts() ?? Enumerable.Empty<Contact>());
     }
 
     #endregion
@@ -67,6 +68,13 @@ public partial class ContactListViewModel : ObservableObject
         
         var mainViewModel = _serviceProvider.GetRequiredService<MainViewModel>();
         mainViewModel.CurrentViewModel = contactDetailsViewModel;
+    }
+
+    [RelayCommand]
+    private void RemoveContact(Contact contact)
+    {
+        _contacts.Remove(contact);
+        Contacts = new ObservableCollection<Contact>(_contactService.GetContacts() ?? Enumerable.Empty<Contact>());
     }
     
     #endregion

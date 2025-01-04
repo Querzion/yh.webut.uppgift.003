@@ -9,6 +9,9 @@ namespace MA_Presentation_Avalonia.ViewModels;
 public partial class ContactDetailsViewModel(IServiceProvider serviceProvider) : ObservableObject
 {
     private readonly IServiceProvider _serviceProvider = serviceProvider;
+
+    [ObservableProperty] 
+    private string _headline = "CONTACT DETAILS";
     
     [ObservableProperty]
     private Contact _contact = new();

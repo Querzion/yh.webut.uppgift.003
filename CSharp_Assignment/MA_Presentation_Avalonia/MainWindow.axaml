@@ -14,7 +14,7 @@
         
         mc:Ignorable="d" d:DesignWidth="870" d:DesignHeight="450"
         x:Class="MA_Presentation_Avalonia.MainWindow"
-        Title="CSharp Assignment" Height="870" Width="450">
+        Title="CSharp Assignment" Height="920" Width="450">
     
     <!-- Changed background from static #FFE4A3 to DynamicResource -->
     <Border Background="{DynamicResource BackgroundColor}" CornerRadius="5">

@@ -8,14 +8,10 @@
              d:DataContext="{d:DesignInstance Type=vm:ContactListViewModel}"
              x:DataType="vm:ContactListViewModel"
              
-             mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="800"
+             mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="850"
              x:Class="MA_Presentation_Avalonia.Views.ContactListView">
     
-    <UserControl.DataContext>
-        <vm:ContactListViewModel />
-    </UserControl.DataContext>
-    
-    <Grid Margin="15" RowDefinitions="Auto, *">
+    <Grid Margin="15" RowDefinitions="Auto, *" x:Name="Root">
         <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
             <TextBlock Grid.Column="0" Text="{Binding Headline, FallbackValue=CONTACT LIST}" 
                        Classes="HeadlineText" />
@@ -38,9 +34,8 @@
                         </StackPanel>
                         
                         <StackPanel Grid.Column="1" >
-                            <!-- <Button Command="{Binding DataContext.GoToContactDetailsViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}, FallbackValue=null}" -->
-                            <!--         CommandParameter="{Binding}" -->
-                            <!--         Classes="StandardButton" Content="View Details"/> -->
+                            <Button Command="{Binding #Root.((vm:ContactListViewModel)DataContext).GoToContactDetailsViewCommand, FallbackValue=null}" 
+                                    CommandParameter="{Binding .}" Classes="StandardButton"/>
                         </StackPanel>
                         
                     </Grid>
