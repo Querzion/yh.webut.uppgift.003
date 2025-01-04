@@ -132,6 +132,10 @@
               "target": "Package",
               "version": "[11.2.3, )"
             },
+            "Avalonia.Markup.Xaml.Loader": {
+              "target": "Package",
+              "version": "[11.2.3, )"
+            },
             "Avalonia.Themes.Fluent": {
               "target": "Package",
               "version": "[11.2.3, )"

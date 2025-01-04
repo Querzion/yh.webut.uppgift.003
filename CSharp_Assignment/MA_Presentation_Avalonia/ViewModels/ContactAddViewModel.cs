@@ -59,17 +59,19 @@ public partial class ContactAddViewModel(IContactService contactService, IServic
     [RelayCommand]
     private void AddContact()
     {
+        // Memo: Changed _contact to Contact in three places.
+        
         // Create a validation context for the _contact object
         var validationResults = new List<ValidationResult>();
-        var validationContext = new ValidationContext(_contact, null, null);
+        var validationContext = new ValidationContext(Contact, null, null);
 
         // Validate the model
-        bool isValid = Validator.TryValidateObject(_contact, validationContext, validationResults, true);
+        bool isValid = Validator.TryValidateObject(Contact, validationContext, validationResults, true);
 
         if (isValid)
         {
             // Proceed with creating the contact if validation passes
-            var result = _contactService.CreateContact(_contact);
+            var result = _contactService.CreateContact(Contact);
             if (result)
             {
                 BackOrCancel();

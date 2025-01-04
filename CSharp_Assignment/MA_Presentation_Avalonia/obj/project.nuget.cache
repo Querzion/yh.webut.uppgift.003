@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dfh5D9RZUl8=",
+  "dgSpecHash": "18KOGfzA4a8=",
   "success": true,
   "projectFilePath": "/home/querzion/RiderProjects/yh.webut.uppgift.003/CSharp_Assignment/MA_Presentation_Avalonia/MA_Presentation_Avalonia.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "/home/querzion/.nuget/packages/avalonia.diagnostics/11.2.3/avalonia.diagnostics.11.2.3.nupkg.sha512",
     "/home/querzion/.nuget/packages/avalonia.fonts.inter/11.2.3/avalonia.fonts.inter.11.2.3.nupkg.sha512",
     "/home/querzion/.nuget/packages/avalonia.freedesktop/11.2.3/avalonia.freedesktop.11.2.3.nupkg.sha512",
+    "/home/querzion/.nuget/packages/avalonia.markup.xaml.loader/11.2.3/avalonia.markup.xaml.loader.11.2.3.nupkg.sha512",
     "/home/querzion/.nuget/packages/avalonia.native/11.2.3/avalonia.native.11.2.3.nupkg.sha512",
     "/home/querzion/.nuget/packages/avalonia.remote.protocol/11.2.3/avalonia.remote.protocol.11.2.3.nupkg.sha512",
     "/home/querzion/.nuget/packages/avalonia.skia/11.2.3/avalonia.skia.11.2.3.nupkg.sha512",

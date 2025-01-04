@@ -213,6 +213,22 @@
           }
         }
       },
+      "Avalonia.Markup.Xaml.Loader/11.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.2.3"
+        },
+        "compile": {
+          "lib/net8.0/Avalonia.Markup.Xaml.Loader.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Markup.Xaml.Loader.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Avalonia.Native/11.2.3": {
         "type": "package",
         "dependencies": {
@@ -1931,6 +1947,24 @@
         "lib/net8.0/Avalonia.FreeDesktop.xml",
         "lib/netstandard2.0/Avalonia.FreeDesktop.dll",
         "lib/netstandard2.0/Avalonia.FreeDesktop.xml"
+      ]
+    },
+    "Avalonia.Markup.Xaml.Loader/11.2.3": {
+      "sha512": "a11A13NtjNkGCqIO85q6YUN1uQFAwKHZwy7HtJt91+PujlewJ3+CO6Aw4evkyvg+rI7mcqyDE6FbCl3Juykqqg==",
+      "type": "package",
+      "path": "avalonia.markup.xaml.loader/11.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "avalonia.markup.xaml.loader.11.2.3.nupkg.sha512",
+        "avalonia.markup.xaml.loader.nuspec",
+        "lib/net6.0/Avalonia.Markup.Xaml.Loader.dll",
+        "lib/net6.0/Avalonia.Markup.Xaml.Loader.xml",
+        "lib/net8.0/Avalonia.Markup.Xaml.Loader.dll",
+        "lib/net8.0/Avalonia.Markup.Xaml.Loader.xml",
+        "lib/netstandard2.0/Avalonia.Markup.Xaml.Loader.dll",
+        "lib/netstandard2.0/Avalonia.Markup.Xaml.Loader.xml"
       ]
     },
     "Avalonia.Native/11.2.3": {
@@ -3919,6 +3953,7 @@
       "Avalonia.Desktop >= 11.2.3",
       "Avalonia.Diagnostics >= 11.2.3",
       "Avalonia.Fonts.Inter >= 11.2.3",
+      "Avalonia.Markup.Xaml.Loader >= 11.2.3",
       "Avalonia.Themes.Fluent >= 11.2.3",
       "Business >= 1.0.0",
       "CommunityToolkit.Mvvm >= 8.4.0",
@@ -3996,6 +4031,10 @@
             "version": "[11.2.3, )"
           },
           "Avalonia.Fonts.Inter": {
+            "target": "Package",
+            "version": "[11.2.3, )"
+          },
+          "Avalonia.Markup.Xaml.Loader": {
             "target": "Package",
             "version": "[11.2.3, )"
           },
