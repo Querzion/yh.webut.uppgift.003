@@ -2,6 +2,8 @@
     <!-- https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management -->
     <PropertyGroup>
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+<!--        Added because it looked handy. Intention from a video.          -->
+        <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
     <ItemGroup>
         <!-- Avalonia packages -->
