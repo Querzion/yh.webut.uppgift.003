@@ -9,6 +9,12 @@
     <ItemGroup>
         <AvaloniaResource Include="Assets\**"/>
     </ItemGroup>
+    
+<!--    GLOBAL USINGS - Based on the enabled ImplicitUsings in the Solution Items that was added.    -->
+    <ItemGroup>
+        <Using Include="CommunityToolkit.Mvvm.ComponentModel" />
+        <Using Include="CommunityToolkit.Mvvm.Input" />
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Avalonia"/>
