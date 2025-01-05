@@ -69,6 +69,31 @@
         <Setter Property="Padding" Value="25" />
     </Style>
     
+    <!-- Hover (Pointer Over) Effect -->
+    <Style Selector="TextBox.InputText:pointerover /template/ Border#ButtonBorder">
+        <Setter Property="Background" Value="#599874" />
+    </Style>
+    <Style Selector="TextBox.InputText:pointerover /template/ TextBlock#ContentText">
+        <Setter Property="Foreground" Value="#000000" />
+    </Style>
+    
+    <!-- Pressed Effect -->
+    <Style Selector="TextBox.InputText:pressed /template/ Border#ButtonBorder">
+        <Setter Property="Background" Value="#FF5733" />
+    </Style>
+    <Style Selector="TextBox.InputText:pressed /template/ TextBlock#ContentText">
+        <Setter Property="Foreground" Value="#FFFFFF" />
+    </Style>
+    
+    <!-- Focused Effect -->
+    <Style Selector="TextBox.InputText:focus /template/ Border#ButtonBorder">
+        <Setter Property="BorderBrush" Value="#1E90FF" />
+    </Style>
+    <Style Selector="TextBox.InputText:focus /template/ TextBlock#ContentText">
+        <Setter Property="Foreground" Value="#1E90FF" />
+    </Style>
+    
+    
     <!-- Input Area Text -->
     <Style Selector="TextBox.InputAreaText">
         <Setter Property="Height" Value="300" />

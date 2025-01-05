@@ -12,8 +12,12 @@
     
     <Application.Resources>
         <!-- Colors are added on the request of ChatGPT.  -->
-        <Color x:Key="BackgroundColor">#FFE4A3</Color>
         <Color x:Key="ForegroundColor">#000000</Color>
+        <Color x:Key="BackgroundColor">#FFE4A3</Color>
+        <!-- <Color x:Key="ClrGreen">#599874</Color> -->
+        <!-- <Color x:Key="ClrRed">#FF725A</Color> -->
+        <!-- <Color x:Key="ClrBeige">#FFE4A3</Color> -->
+        <!-- <Color x:Key="ClrGray">#404040</Color> -->
              <!-- The reason I got my fonts working eventually: https://www.youtube.com/watch?v=hAyeGWozi90 -->
         <FontFamily x:Key="AgaveNerdFont-Regular">/Resources/Fonts/AgaveNerdFont-Regular.ttf#Agave Nerd Font Regular</FontFamily>
         <FontFamily x:Key="AgaveNerdFont-Bold">/Resources/Fonts/AgaveNerdFont-Bold.ttf#Agave Nerd Font Bold</FontFamily>

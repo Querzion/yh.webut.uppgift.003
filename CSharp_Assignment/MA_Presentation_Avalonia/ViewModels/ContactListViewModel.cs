@@ -1,5 +1,6 @@
 using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Input;
 using Business.Interfaces;
@@ -73,9 +74,19 @@ public partial class ContactListViewModel : ObservableObject
     [RelayCommand]
     private void RemoveContact(Contact contact)
     {
-        _contacts.Remove(contact);
-        Contacts = new ObservableCollection<Contact>(_contactService.GetContacts() ?? Enumerable.Empty<Contact>());
-    }
+        // Call DeleteContact to remove the contact from both ObservableCollection and file
+        bool isDeleted = _contactService.DeleteContact(contact.Id);
     
+        if (isDeleted)
+        {
+            // If the contact was deleted successfully, update the ObservableCollection
+            _contacts.Remove(contact);
+        }
+        else
+        {
+            Debug.WriteLine($"Failed to delete contact with ID {contact.Id}");
+        }
+    }
+
     #endregion
 }

@@ -26,16 +26,22 @@
                      BorderThickness="2" CornerRadius="5">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="models:Contact">
-                    <Grid ColumnDefinitions="*, Auto">
+                    <Grid ColumnDefinitions="*, Auto, Auto">
         
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text="{Binding FullName}" FontSize="20" FontWeight="Bold" />
-                            <TextBlock Text="{Binding Email}" FontSize="14"/>
+                            <TextBlock Text="{Binding FullName}" Classes="LabelDetailsText" />
+                            <TextBlock Text="{Binding Email}" Classes="LabelText" FontSize="14"/>
                         </StackPanel>
                         
                         <StackPanel Grid.Column="1" >
                             <Button Command="{Binding #Root.((vm:ContactListViewModel)DataContext).GoToContactDetailsViewCommand, FallbackValue=null}" 
-                                    CommandParameter="{Binding .}" Classes="StandardButton"/>
+                                    CommandParameter="{Binding .}" Classes="DetailsButton" Content="&#x2026;" Margin="0 0 0 5" />
+                            
+                            <Button Command="{Binding #Root.((vm:ContactListViewModel)DataContext).RemoveContactCommand, FallbackValue=null}" 
+                                    CommandParameter="{Binding .}" Classes="DeleteButton" Content="DELETE"/>
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Column="2" >
                         </StackPanel>
                         
                     </Grid>
