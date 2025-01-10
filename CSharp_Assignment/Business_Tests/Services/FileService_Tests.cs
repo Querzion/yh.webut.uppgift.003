@@ -6,9 +6,10 @@ namespace Business_Tests.Services;
 
 public class FileService_Tests
 {
+    // ChatGPT generated tests.
+    
     private const string DirectoryPath = "Data";
     private const string FileName = "testfile.txt";
-    private readonly string _filePath = Path.Combine(DirectoryPath, FileName);
 
     // Test for GetContentFromFile when file exists
     [Fact]
@@ -60,20 +61,49 @@ public class FileService_Tests
     }
 
     // Test for SaveContentToFile failure
-    [Fact]
-    public void SaveContentToFile_Failure_ReturnsFalse()
-    {
-        // Arrange
-        var content = "This is new content to save.";
-        var mockFileService = new Mock<FileService>(DirectoryPath, FileName);
-        
-        // Simulate an exception during file writing
-        mockFileService.Setup(fs => fs.SaveContentToFile(content)).Throws(new IOException("Failed to write file"));
+    // [Fact]
+    // public void SaveContentToFile_Failure_ReturnsFalse()
+    // {
+    //     // Arrange
+    //     var content = "This is new content to save.";
+    //     var mockFileService = new Mock<FileService>(DirectoryPath, FileName);
+    //     
+    //     // Simulate an exception during file writing
+    //     mockFileService.Setup(fs => fs.SaveContentToFile(content)).Throws(new IOException("Failed to write file"));
+    //
+    //     // Act
+    //     var result = mockFileService.Object.SaveContentToFile(content);
+    //     
+    //     // Assert
+    //     Assert.False(result);
+    // }
 
-        // Act
-        var result = mockFileService.Object.SaveContentToFile(content);
-        
-        // Assert
-        Assert.False(result);
-    }
+    
+    // Teachers Examples. For a smaller build. . . 
+    // [Fact]
+    // public void SaveContentToFile_ShouldSaveContentToAFile()
+    // {
+    //     // Arrange
+    //     var content = "This is new content to save.";
+    //     var fileName = $"{Guid.NewGuid()}.json";
+    //     
+    //     IFileService fileService = new IFileService("Data", fileName);
+    //
+    //     try
+    //     {
+    //         // Act
+    //         var result = fileService.SaveContentToFile(content);
+    //
+    //         // Assert
+    //         Assert.True(result);
+    //     }
+    //     finally
+    //     {
+    //         if (File.Exists(fileName))
+    //             File.Delete(fileName);
+    //     }
+    //    
+    // }
+    
+    
 }

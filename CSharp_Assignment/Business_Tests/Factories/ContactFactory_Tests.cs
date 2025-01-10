@@ -19,7 +19,16 @@ public class ContactFactory_Tests
     }
     
     [Fact]
-    public void Create_ShouldReturnContactEntity_WhenCreated()
+    public void Create_ShouldReturnContactRegistrationForm2()
+    {
+        var result = ContactFactory.Create();
+        
+        Assert.NotNull(result);
+        Assert.IsType<ContactRegistrationForm>(result);
+    }
+    
+    [Fact]
+    public void Create_ShouldReturnContactEntity_WhenContactRegistrationFormIsProvided()
     {
         // Arrange: Set up a ContactRegistrationForm with some data
         var form = TestData.GetSampleContactRegistrationForm();
@@ -32,7 +41,7 @@ public class ContactFactory_Tests
     }
     
     [Fact]
-    public void Create_ShouldReturnContact_WhenCreated()
+    public void Create_ShouldReturnContact_WhenContactEntityIsProvided()
     {
         // Arrange: Set up a ContactRegistrationForm with some data
         var contactEntity = TestData.GetSampleContactEntity();

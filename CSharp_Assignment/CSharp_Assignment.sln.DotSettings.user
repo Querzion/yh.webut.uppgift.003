@@ -22,6 +22,7 @@
     &lt;ProjectFile&gt;37A5D866-F2EA-4B98-9921-7AADD643B5CC/d:Helpers/f:TestData_Tests.cs&lt;/ProjectFile&gt;
     &lt;TestAncestor&gt;
       &lt;TestId&gt;xUnit::37A5D866-F2EA-4B98-9921-7AADD643B5CC::net9.0::Business_Tests.Services.FileService_Tests.GetContentFromFile_FileExists_ReturnsContent&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::37A5D866-F2EA-4B98-9921-7AADD643B5CC::net9.0::Business_Tests.Services.IContactFileService_Tests&lt;/TestId&gt;
     &lt;/TestAncestor&gt;
     &lt;ProjectFile&gt;37A5D866-F2EA-4B98-9921-7AADD643B5CC/d:Services/f:FileService_Tests.cs&lt;/ProjectFile&gt;
   &lt;/Or&gt;

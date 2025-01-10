@@ -8,6 +8,8 @@ namespace Business_Tests.Repositories;
 
 public class ContactRepository_Tests
 {
+    // ChatGPT generated tests, which I have changed a bit.
+    
     private readonly Mock<IContactFileService> _mockContactFileService;
     private readonly ContactRepository _contactRepository;
 

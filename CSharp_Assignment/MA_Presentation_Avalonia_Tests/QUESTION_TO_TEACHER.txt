@@ -1,0 +1,3 @@
+Why don't we test the viewmodels or views? 
+
+I have basically been done for a week already. If I have actually ended up creating all the necessary tests; that is.

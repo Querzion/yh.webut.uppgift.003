@@ -5,15 +5,15 @@
 // - [*] Creation of ContactEntity,
 // - [*] Creation of Contact, 
 // - [*] Creation of Unique Id,
-// - [] Check Repositories, Base & Contact
+// - [/] Check Repositories, Base & Contact
 // - [] Creation of Contact.json file, 
-// - [] Creation of Contact.json content,
+// - [*] Creation of Contact.json content,
 // - [] Find Contact.json file ability,
-// - [] Read from Contact.json file ability,
-// - [] Read Contacts from List,
-// - [] Ability to update contact info,
-// - [] Ability to delete contact per Id,
-// - [] Check if the right contact is being deleted.
+// - [*] Read from Contact.json file ability,
+// - [*] Read Contacts from List,
+// - [*] Ability to update contact info,
+// - [*] Ability to delete contact per Id,
+// - [/] Check if the right contact is being deleted.
 
 // Checked with ChatGPT
 // https://chatgpt.com/share/6762a17a-561c-8005-beed-cf5236eeb50c

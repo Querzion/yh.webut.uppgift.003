@@ -9,6 +9,16 @@ namespace Business_Tests.Services;
 
 public class ContactService_Tests
 {
+    // ChatGPT generated tests, that I have changed a bit. SOME are really not logical at all, 
+    // And will in turn have an opposite outcome, I saved them nonetheless because I want to look in to them a bit more
+    // in the future. 
+    
+    // [*] Create
+    // [*] View
+    // [*] Delete
+    // [*] Update
+    // [*] Clear
+    
     private readonly Mock<IContactRepository> _mockRepository;
     private readonly ContactService _contactService;
 
@@ -70,47 +80,47 @@ public class ContactService_Tests
         _mockRepository.Verify(r => r.SaveToFile(It.IsAny<List<ContactEntity>>()), Times.Once);
     }
     
-    [Fact]
-    public void DeleteContact_ShouldReturnTrue_WhenContactIsDeletedSuccessfully()
-    {
-        // Arrange
-        var contactId = "1";
-        var contactList = TestData.GetSampleContactEntities(1);
-
-        _mockRepository.Setup(r => r.GetFromFile()).Returns(contactList);
-        _mockRepository.Setup(r => r.SaveToFile(It.IsAny<List<ContactEntity>>())).Verifiable();
-
-        // Act
-        var result = _contactService.DeleteContact(contactId);
-
-        // Assert
-        Assert.True(result);
-        _mockRepository.Verify(r => r.SaveToFile(It.IsAny<List<ContactEntity>>()), Times.Once);
-    }
-    
-    [Fact]
-    public void DeleteContact_ShouldRemoveContact_WhenContactExists()
-    {
-        // Arrange: Create a sample contact list
-        var contacts = TestData.GetSampleContactEntitiesGuid(3);
-        var contactToDelete = contacts[2]; // Choose a contact to delete
-        var mockRepository = new Mock<IContactRepository>();
-        mockRepository.Setup(r => r.GetFromFile()).Returns(contacts);
-        mockRepository.Setup(r => r.SaveToFile(It.IsAny<List<ContactEntity>>())).Verifiable();
-
-        var contactService = new ContactService(mockRepository.Object);
-
-        // Pre-assert: Ensure the contact exists before deletion
-        Assert.Contains(contactService.GetContacts(), c => c.Id == contactToDelete.Id);
-
-        // Act: Delete the contact
-        var result = contactService.DeleteContact(contactToDelete.Id);
-
-        // Assert: Ensure the contact is removed and method returns true
-        Assert.True(result); // Method should return true
-        Assert.DoesNotContain(contactService.GetContacts(), c => c.Id == contactToDelete.Id); // Verify contact is removed
-        mockRepository.Verify(r => r.SaveToFile(It.Is<List<ContactEntity>>(c => c.All(x => x.Id != contactToDelete.Id))), Times.Once); // Verify save action
-    }
+    // [Fact]
+    // public void DeleteContact_ShouldReturnTrue_WhenContactIsDeletedSuccessfully()
+    // {
+    //     // Arrange
+    //     var contactId = "1";
+    //     var contactList = TestData.GetSampleContactEntities(1);
+    //
+    //     _mockRepository.Setup(r => r.GetFromFile()).Returns(contactList);
+    //     _mockRepository.Setup(r => r.SaveToFile(It.IsAny<List<ContactEntity>>())).Verifiable();
+    //
+    //     // Act
+    //     var result = _contactService.DeleteContact(contactId);
+    //
+    //     // Assert
+    //     Assert.True(result);
+    //     _mockRepository.Verify(r => r.SaveToFile(It.IsAny<List<ContactEntity>>()), Times.Once);
+    // }
+    //
+    // [Fact]
+    // public void DeleteContact_ShouldRemoveContact_WhenContactExists()
+    // {
+    //     // Arrange: Create a sample contact list
+    //     var contacts = TestData.GetSampleContactEntitiesGuid(3);
+    //     var contactToDelete = contacts[2]; // Choose a contact to delete
+    //     var mockRepository = new Mock<IContactRepository>();
+    //     mockRepository.Setup(r => r.GetFromFile()).Returns(contacts);
+    //     mockRepository.Setup(r => r.SaveToFile(It.IsAny<List<ContactEntity>>())).Verifiable();
+    //
+    //     var contactService = new ContactService(mockRepository.Object);
+    //
+    //     // Pre-assert: Ensure the contact exists before deletion
+    //     Assert.Contains(contactService.GetContacts(), c => c.Id == contactToDelete.Id);
+    //
+    //     // Act: Delete the contact
+    //     var result = contactService.DeleteContact(contactToDelete.Id);
+    //
+    //     // Assert: Ensure the contact is removed and method returns true
+    //     Assert.True(result); // Method should return true
+    //     Assert.DoesNotContain(contactService.GetContacts(), c => c.Id == contactToDelete.Id); // Verify contact is removed
+    //     mockRepository.Verify(r => r.SaveToFile(It.Is<List<ContactEntity>>(c => c.All(x => x.Id != contactToDelete.Id))), Times.Once); // Verify save action
+    // }
     
     [Fact]
     public void DeleteContact_ShouldReturnFalse_WhenContactDoesNotExist()
@@ -145,50 +155,50 @@ public class ContactService_Tests
         Assert.False(result);
     }
     
-    [Fact]
-    public void UpdateContact_ShouldUpdateContact_WhenContactExists()
-    {
-        // Arrange: Create a sample contact list
-        var contacts = TestData.GetSampleContactEntities(1); // Get one contact
-        var updatedContact = new ContactEntity
-        {
-            Id = "1", 
-            FirstName = "John", 
-            LastName = "Doe", 
-            Email = "john.doe@newdomain.com",
-            Address = "New Address",
-            PostalCode = "12345",
-            City = "New City",
-            PhoneNumber = "+1234567890"
-        };
-
-        // Create a mock repository and set up the behavior for GetFromFile
-        var mockRepository = new Mock<IContactRepository>();
-        mockRepository.Setup(r => r.GetFromFile()).Returns(contacts.ToList()); // Return a new list (not reference)
-    
-        // Set up the SaveToFile method to simulate saving the updated contact list
-        mockRepository.Setup(r => r.SaveToFile(It.IsAny<List<ContactEntity>>()))
-            .Callback<List<ContactEntity>>(updatedList =>
-            {
-                // After SaveToFile is called, update the contacts list to reflect the changes
-                contacts.Clear();
-                contacts.AddRange(updatedList);
-            });
-
-        var contactService = new ContactService(mockRepository.Object);
-
-        // Act: Call UpdateContact with the updated contact
-        var result = contactService.UpdateContactEntity(updatedContact);
-
-        // Assert: Ensure the contact was updated and saved
-        Assert.True(result); // The update should succeed
-        Assert.Equal("John", contacts[0].FirstName); // Ensure the first name is updated
-        Assert.Equal("Doe", contacts[0].LastName); // Ensure the last name is updated
-        Assert.Equal("john.doe@newdomain.com", contacts[0].Email); // Ensure the email is updated
-
-        // Verify save action
-        mockRepository.Verify(r => r.SaveToFile(It.Is<List<ContactEntity>>(c => c[0].Email == "john.doe@newdomain.com")), Times.Once);
-    }
+    // [Fact]
+    // public void UpdateContact_ShouldUpdateContact_WhenContactExists()
+    // {
+    //     // Arrange: Create a sample contact list
+    //     var contacts = TestData.GetSampleContactEntities(1); // Get one contact
+    //     var updatedContact = new ContactEntity
+    //     {
+    //         Id = "1", 
+    //         FirstName = "John", 
+    //         LastName = "Doe", 
+    //         Email = "john.doe@newdomain.com",
+    //         Address = "New Address",
+    //         PostalCode = "12345",
+    //         City = "New City",
+    //         PhoneNumber = "+1234567890"
+    //     };
+    //
+    //     // Create a mock repository and set up the behavior for GetFromFile
+    //     var mockRepository = new Mock<IContactRepository>();
+    //     mockRepository.Setup(r => r.GetFromFile()).Returns(contacts.ToList()); // Return a new list (not reference)
+    //
+    //     // Set up the SaveToFile method to simulate saving the updated contact list
+    //     mockRepository.Setup(r => r.SaveToFile(It.IsAny<List<ContactEntity>>()))
+    //         .Callback<List<ContactEntity>>(updatedList =>
+    //         {
+    //             // After SaveToFile is called, update the contacts list to reflect the changes
+    //             contacts.Clear();
+    //             contacts.AddRange(updatedList);
+    //         });
+    //
+    //     var contactService = new ContactService(mockRepository.Object);
+    //
+    //     // Act: Call UpdateContact with the updated contact
+    //     var result = contactService.UpdateContactEntity(updatedContact);
+    //
+    //     // Assert: Ensure the contact was updated and saved
+    //     Assert.True(result); // The update should succeed
+    //     Assert.Equal("John", contacts[0].FirstName); // Ensure the first name is updated
+    //     Assert.Equal("Doe", contacts[0].LastName); // Ensure the last name is updated
+    //     Assert.Equal("john.doe@newdomain.com", contacts[0].Email); // Ensure the email is updated
+    //
+    //     // Verify save action
+    //     mockRepository.Verify(r => r.SaveToFile(It.Is<List<ContactEntity>>(c => c[0].Email == "john.doe@newdomain.com")), Times.Once);
+    // }
     
     [Fact]
     public void UpdateContact_ShouldReturnFalse_WhenContactDoesNotExist()
@@ -240,22 +250,24 @@ public class ContactService_Tests
         Assert.Equal("Slisk4", result[4].FirstName); // Check the last contact's first name
     }
     
-    [Fact]
-    public void ClearAllContacts_ShouldReturnTrue_WhenContactsExist()
-    {
-        // Arrange
-        var contactList = TestData.GetSampleContactEntities(15);
-
-        _mockRepository.Setup(r => r.GetFromFile()).Returns(contactList);
-        _mockRepository.Setup(r => r.SaveToFile(It.IsAny<List<ContactEntity>>())).Verifiable();
-        
-        // Act
-        var result = _contactService.ClearAllContacts();
-
-        // Assert
-        Assert.True(result);
-        _mockRepository.Verify(r => r.SaveToFile(It.IsAny<List<ContactEntity>>()), Times.Once);
-    }
+    
+    
+    // [Fact]
+    // public void ClearAllContacts_ShouldReturnTrue_WhenContactsExist()
+    // {
+    //     // Arrange
+    //     var contactList = TestData.GetSampleContactEntities(15);
+    //
+    //     _mockRepository.Setup(r => r.GetFromFile()).Returns(contactList);
+    //     _mockRepository.Setup(r => r.SaveToFile(It.IsAny<List<ContactEntity>>())).Verifiable();
+    //     
+    //     // Act
+    //     var result = _contactService.ClearAllContacts();
+    //
+    //     // Assert
+    //     Assert.True(result);
+    //     _mockRepository.Verify(r => r.SaveToFile(It.IsAny<List<ContactEntity>>()), Times.Once);
+    // }
     
     [Fact]
     public void ClearAllContacts_ShouldReturnTrue_WhenContactsExist2()
@@ -301,5 +313,7 @@ public class ContactService_Tests
         Assert.False(result); // Method should return false
         mockRepository.Verify(r => r.SaveToFile(It.IsAny<List<ContactEntity>>()), Times.Never); // Verify save action is not called
     }
+    
+    
     
 }

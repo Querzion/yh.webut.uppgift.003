@@ -15,6 +15,8 @@ public class ContactRegistrationForm_Tests
         Assert.IsType<ContactRegistrationForm>(result);
     }
     
+    // ChatGPT generated tests in order to test validation process.
+    
     private static ValidationContext GetValidationContext(object model) =>
         new ValidationContext(model, null, null);
 
